@@ -1,6 +1,6 @@
 # printf()
 
-This project is about recreating the printf function in the C lenguage and it contains some basic features and functions.
+This project is about recreating the printf function in the C language and it contains some basic features and functions.
 
 
 ## Authors 
