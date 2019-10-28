@@ -1,28 +1,14 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 /**
  * chars - prints to the stdout a char
  *
  */
-void _chars(va_list arg)
+int _chars(va_list arg)
 {
-	write(1, &arg, sizeof(char));
-}
-/**
- * strs - prints a string to the stdout
- *
- */
-void _strs(va_list arg)
-{
-	write(1, &arg, strlen(format));
-}
-/**
- * _prct - prints a special char to stdout
- *
- *
- */
-void _prct(va_list arg)
-{
-	write(1, &arg, sizeof(char));
+	char c;
+	c = va_arg(arg, int);
+	return (write(1, &c, sizeof(char)));
 }
