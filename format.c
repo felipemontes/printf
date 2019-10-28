@@ -2,13 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdarg.h>
 /**
  * chars - prints to the stdout a char
- *
+ * @c: character
  */
-int _chars(va_list arg)
+int _chars(va_list args)
 {
 	char c;
-	c = va_arg(arg, int);
-	return (write(1, &c, sizeof(char)));
+	c = va_arg(args, int);
+	return (putchar(c));
 }
