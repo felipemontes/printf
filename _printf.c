@@ -11,27 +11,27 @@
  */
 int _printf(const char *format, ...)
 {
-	holder agmt[] = {
-		{"c", _chars},
-		{NULL, NULL}
-	};
-
-	int i, n;
-	va_list arg;
+	int i;
+	int (*x)(va_list);
+	va_list args;
 
 	i = 0;
-	n = 0;
-	va_start(arg, format);
+	va_start(args, format);
 
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '%'
-		    && format[i + 1] == *(agmt[0].fmt))
+		if (format[i] == '%')
 		{
-			n += agmt[0].f(arg);
+			x = structure(format[i + 1]);
+			x(args);
+			i++;
+		}
+		else
+		{
+			putchar(format[i]);
 		}
 		i++;
 	}
-	va_end (arg);
-	return (n);
+	va_end(args);
+	return (0);
 }
