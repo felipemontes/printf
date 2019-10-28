@@ -20,7 +20,12 @@ int _printf(const char *format, ...)
 
 	while (format && format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			putchar(format[i + 1]);
+			i++;
+		}
+		else if (format[i] == '%')
 		{
 			x = structure(format[i + 1]);
 			x(args);
