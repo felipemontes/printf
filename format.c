@@ -5,7 +5,7 @@
 #include <stdarg.h>
 /**
  * chars - prints to the stdout a char
- *
+ * @c: character
  */
 int _chars(va_list args)
 {
