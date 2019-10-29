@@ -12,6 +12,7 @@ int (*structure(char letter))(va_list args)
 		{"s", _str},
 		{"d", _pnum},
 		{"i", _pnum},
+		{"%", pcent},
 		{NULL, NULL}
 	};
 
