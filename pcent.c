@@ -7,5 +7,6 @@
 int pcent(va_list args)
 {
 	(void) args;
-	return (_putchar('%'));
+	_putchar('%');
+	return (1);
 }
