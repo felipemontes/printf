@@ -27,7 +27,7 @@ int _str(va_list args)
 
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 	return (0);
@@ -46,7 +46,7 @@ int _inter(va_list args)
 
 	if (a < 0)
 	{
-		len = len + putchar('-');
+		len = len + _putchar('-');
 		n = a * -1;
 	}
 	else
@@ -59,7 +59,7 @@ int _inter(va_list args)
 	}
 	while (elev != 0)
 	{
-		len = len + putchar(n / elev + '0');
+		len = len + _putchar(n / elev + '0');
 		n = n % elev;
 		elev = elev / 10;
 	}
