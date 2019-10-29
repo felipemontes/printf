@@ -25,9 +25,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	while (format[cont] != '\0')
-	  {
-	    cont++;
-	  }
+	{
+		cont++;
+	}
 	while (format && format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
