@@ -13,6 +13,9 @@ typedef struct func
 	int (*f)(va_list arg);
 }
 holder;
-int _chars(va_list arg);
-int _str(va_list arg);
+int _chars(va_list args);
+int _str(va_list args);
+int _pnum(int n);
+int _print(va_list args);
+int _putchar(char c);
 #endif
