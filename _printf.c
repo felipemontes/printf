@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <string.h>
 /**
  * _printf - function to print any format
