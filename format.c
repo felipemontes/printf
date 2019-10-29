@@ -13,7 +13,7 @@ int _chars(va_list args)
 	char c;
 
 	c = va_arg(args, int);
-	return (putchar(c));
+	return (_putchar(c));
 }
 /**
  *_str - prints string
