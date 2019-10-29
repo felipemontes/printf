@@ -18,6 +18,7 @@ typedef struct func
 holder;
 int _chars(va_list args);
 int _str(va_list args);
-int _inter(va_list args);
+int _pnum(va_list args);
+int _pint(long c);
 int _putchar(char c);
 #endif

@@ -11,42 +11,40 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	int cont;
+	unsigned int i, cont;
 	int (*x)(va_list);
 	va_list args;
 
-	cont = 0;
+	cont = -1;
 	i = 0;
 	va_start(args, format);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 	{
 		return (-1);
 	}
-	while (format[cont] != '\0')
+	if (format != NULL)
 	{
-		cont++;
-	}
-	while (format && format[i])
-	{
-		if (format[i] == '%' && format[i + 1] == '%')
+		cont = 0;
+		while (format && format[i])
 		{
-			_putchar(format[i + 1]);
+			if (format[i] != '%')
+				_putchar(format[i]);
+			else if (format[i] == '%' && format[i + 1] != '\0')
+			{
+				x = structure(format[i + 1]);
+				if (x != NULL)
+				{
+					cont += x(args) - 1;
+					i++;
+				}
+				else
+					_putchar(format[i]);
+			}
 			i++;
-		}
-		else if (format[i] == '%')
-		{
-			x = structure(format[i + 1]);
-			x(args);
-			i++;
-		}
-		else
-		{
-			_putchar(format[i]);
-		}
-		i++;
-	}
+			cont++;
+		  }
+    	}
 	va_end(args);
 	return (cont);
 }
