@@ -28,7 +28,9 @@ int _printf(const char *format, ...)
 		while (format && format[i])
 		{
 			if (format[i] != '%')
+			{
 				_putchar(format[i]);
+			}
 			else if (format[i] == '%' && format[i + 1] != '\0')
 			{
 				x = structure(format[i + 1]);
@@ -42,8 +44,8 @@ int _printf(const char *format, ...)
 			}
 			i++;
 			cont++;
-		  }
-    	}
+		}
+	}
 	va_end(args);
 	return (cont);
 }
