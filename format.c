@@ -10,10 +10,8 @@
  */
 int _chars(va_list args)
 {
-	char c;
-
-	c = va_arg(args, int);
-	return (putchar(c));
+	_putchar(va_arg(args, int));
+	return (1);
 }
 /**
  *_str - prints string
@@ -27,41 +25,8 @@ int _str(va_list args)
 
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
-	return (0);
-}
-/**
- *_inter - prints an interger
- *@args: argument
- *Return: a string
- */
-int _inter(va_list args)
-{
-	int a, elev = 1, len = 0;
-	unsigned int n;
-
-	a = va_arg(args, int);
-
-	if (a < 0)
-	{
-		len = len + putchar('-');
-		n = a * -1;
-	}
-	else
-	{
-		n = a;
-	}
-	while (n / elev > 9)
-	{
-		elev *= 10;
-	}
-	while (elev != 0)
-	{
-		len = len + putchar(n / elev + '0');
-		n = n % elev;
-		elev = elev / 10;
-	}
-	return (len);
+	return (i);
 }
