@@ -15,12 +15,26 @@ int _printf(const char *format, ...)
 	int (*x)(va_list);
 	va_list args;
 
+	cont = 0;
 	i = 0;
 	va_start(args, format);
 
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
+		return (-1);
+	}
+	while (format[cont] != '\0')
+	{
+		cont++;
+	}
 	while (format && format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			putchar(format[i + 1]);
+			i++;
+		}
+		else if (format[i] == '%')
 		{
 			x = structure(format[i + 1]);
 			x(args);
@@ -33,5 +47,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (cont);
 }
