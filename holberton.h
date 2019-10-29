@@ -17,4 +17,5 @@ typedef struct func
 } holder;
 int _chars(va_list arg);
 int _str(va_list arg);
+int _inter(va_list args);
 #endif
