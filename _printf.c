@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	i = 0;
 	va_start(args, format);
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			putchar(format[i + 1]);
 			i++;
 		}
-		else if (format[i] == '%')
+	        else if (format[i] == '%')
 		{
 			x = structure(format[i + 1]);
 			x(args);
