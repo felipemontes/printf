@@ -21,4 +21,5 @@ int _str(va_list args);
 int _pnum(va_list args);
 int _pint(long c);
 int _putchar(char c);
+int pcent(va_list args);
 #endif
