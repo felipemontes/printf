@@ -9,6 +9,7 @@ int (*structure(char letter))(va_list args)
 
 	holder agmt[] = {
 		{"c", _chars},
+		{"d", _inter},
 		{NULL, NULL}
 	};
 
