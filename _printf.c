@@ -12,6 +12,7 @@
 int _printf(const char *format, ...)
 {
 	int i;
+	int cont;
 	int (*x)(va_list);
 	va_list args;
 
@@ -34,7 +35,7 @@ int _printf(const char *format, ...)
 			putchar(format[i + 1]);
 			i++;
 		}
-		else if (format[i] == '%')
+	        else if (format[i] == '%')
 		{
 			x = structure(format[i + 1]);
 			x(args);

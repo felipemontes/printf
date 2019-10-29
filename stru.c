@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *
+ * structure - structure to find type
  *
  */
 int (*structure(char letter))(va_list args)
@@ -10,7 +10,7 @@ int (*structure(char letter))(va_list args)
 	holder agmt[] = {
 		{"c", _chars},
 		{"s", _str},
-		{"d", _inter},
+  	{"d", _inter},
 		{"i", _inter},
 		{NULL, NULL}
 	};
@@ -18,9 +18,11 @@ int (*structure(char letter))(va_list args)
 	while (agmt[i].fmt != NULL)
 	{
 		if (letter == agmt[i].fmt[0])
-			return(agmt[i].f);
+		{
+			return (agmt[i].f);
+		}
 		i++;
 	}
-	return(NULL);
+	return (NULL);
 
 }

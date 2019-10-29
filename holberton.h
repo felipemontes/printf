@@ -5,7 +5,10 @@
 int _printf(const char *format, ...);
 int (*structure(char letter))(va_list);
 /**
- *func - structure for arguments
+ * struct func - structure to find the typo of var
+ * @fmt: character
+ * @f: function
+ *
  */
 typedef struct func
 {
