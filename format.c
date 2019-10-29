@@ -39,7 +39,7 @@ int _str(va_list args)
  */
 int _inter(va_list args)
 {
-	long a, elev = 1, len = 0;
+	int a, elev = 1, len = 0;
 	unsigned int n;
 
 	a = va_arg(args, int);
