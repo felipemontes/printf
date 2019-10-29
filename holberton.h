@@ -13,9 +13,11 @@ int (*structure(char letter))(va_list);
 typedef struct func
 {
 	char *fmt;
-	int (*f)(va_list arg);
-} holder;
-int _chars(va_list arg);
-int _str(va_list arg);
+	int (*f)(va_list args);
+}
+holder;
+int _chars(va_list args);
+int _str(va_list args);
 int _inter(va_list args);
+int _putchar(char c);
 #endif
