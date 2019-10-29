@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _pnum - check if is a positive number
- *
+ *@args: arguments
  * Return: the number
  */
 int _pnum(va_list args)
@@ -19,9 +19,9 @@ int _pnum(va_list args)
 	return (psnum);
 }
 /**
- *
- *
- *
+ *_pint - prints an integer
+ *@c: number received
+ *Return: number
  */
 int _pint(long c)
 {
