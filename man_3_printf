@@ -1,7 +1,7 @@
-.Dd 28/10/2019 
+.Dd 28/10/2019
 .Dt _printf
 .Os Darwin
-.Sh _printf 
+.Sh _printf
 .Nm Print ARGUMENT(S) according to FORMAT
 .Nd format and print data
 .Sh SYNOPSIS
@@ -12,14 +12,18 @@
 This _printf function is the recreation of the printf function, that is used to write the C string pointed by format to the standard output (stdout), it includes format specifiers (subsequences beginning with %).
 .Pp
 A list of flags and their descriptions:
-.Bl -tag -width -indent  
-.It Fl c                 
+.Bl -tag -width -indent
+.It Fl c
 This flag prints a char to the stdout.
 .It Fl s
 This flag prints a string to the stdout.
 .It Fl i
 This flag prints a int to the stdout.
-.El   
+.It Fl d
+This flag print a decimal to the stdout, see -i
+It. Fl %
+This flag prints a single '%' symbol.
+.El
 .Pp
 .Sh Authors
 .Bl -tag -width "/Users/joeuser/Library/really_long_file_name" -compact
